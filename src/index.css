@@ -4,9 +4,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: verdana;
   min-height: 100vh;
 }
 
@@ -15,9 +13,25 @@ body {
   justify-content: flex-end;
   min-width: 800px;
   background-color: pink;
+  margin-bottom: 30px;
 }
 
 .home {
   margin-right: auto;
   padding-left: 10px;
+}
+
+.mainPage-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.container-item {
+  float: right;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+img {
+  width: 200px;
+  height: 275px;
 }
