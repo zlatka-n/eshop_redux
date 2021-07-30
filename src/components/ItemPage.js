@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { buyItem } from "../actions/index";
 
@@ -27,42 +27,32 @@ function ItemPage(props) {
     props.buyItem(historyId, quantity);
   };
 
-  const renderItemList = () => {
-    const objectValues = Object.values(props.thisItem);
-
-    const list = objectValues.map((item) => {
-      const mapAgain = item.map((el) => {
-        if (el.id === historyId) {
-          return (
-            <div className="container-item" key={el.id}>
-              <img src={el.image} className="itemImg" alt="clothes item"></img>
-              <div>
-                <div className="itemTitle">{el.title}</div>
-                <div className="itemAuthor">{el.author}</div>
-                <div className="itemPrice">{el.price} EUR</div>
-                <button onClick={() => handleSubmit()}>Add to basket</button>
-              </div>
+  const renderItemInfo = () => {
+    return props.products.map((item) => {
+      if (item.id === historyId) {
+        return (
+          <div className="container-item" key={item.id}>
+            <img src={item.image} className="itemImg" alt="books' item"></img>
+            <div>
+              <div className="itemTitle">{item.title}</div>
+              <div className="itemAuthor">{item.author}</div>
+              <div className="itemPrice">Price: {item.price} EUR</div>
+              <button onClick={() => handleSubmit()}>Add to basket</button>
             </div>
-          );
-        }
-      });
-      return mapAgain;
+          </div>
+        );
+      }
+      return null;
     });
-    return list;
   };
 
-  return (
-    <div className="itemContainer">
-      {renderItemList()}
-      {/* {addToCart()} */}
-    </div>
-  );
+  return <div className="itemContainer">{renderItemInfo()}</div>;
 }
 
 const mapStateToProps = (state) => {
   return {
     itemsToSell: state.getBook,
-    thisItem: state.showItems,
+    products: state.getBook.products,
   };
 };
 export default connect(mapStateToProps, { buyItem })(ItemPage);
