@@ -3,25 +3,33 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 function MainPage(props) {
-  const renderItemsList = props.itemsToSell.map((item) => {
-    return (
-      <div className="container-item" key={item.id}>
-        <Link to={`/item/${item.id}`}>
-          <img src={item.image}></img>
-          <div className="itemTitle">{item.title}</div>
-          <div className="itemDescription">{item.description}</div>
-          <div className="itemPrice">{item.price} EUR</div>
-        </Link>
-      </div>
-    );
-  });
+  const renderItemList = () => {
+    const objectValues = Object.values(props.itemsToSell);
 
-  return <div className="mainPage-container">{renderItemsList}</div>;
+    const list = objectValues.map((item) => {
+      const mapAgain = item.map((el) => {
+        return (
+          <div className="container-item" key={el.id}>
+            <Link to={`/item/${el.id}`}>
+              <img src={el.image} alt="clothes item"></img>
+              <div className="itemTitle">{el.title}</div>
+              <div className="itemAuthor">{el.author}</div>
+              <div className="itemPrice">{el.price} EUR</div>
+            </Link>
+          </div>
+        );
+      });
+      return mapAgain;
+    });
+    return list;
+  };
+
+  return <div className="mainPage-container"> {renderItemList()}</div>;
 }
 
 const mapStateToProps = (state) => {
   return {
-    itemsToSell: state.warehouse,
+    itemsToSell: state.showItems,
   };
 };
 

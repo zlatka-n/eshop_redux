@@ -1,5 +1,4 @@
 import React from "react";
-import Basket from "./Basket";
 import { Link } from "react-router-dom";
 
 function NavBar() {
