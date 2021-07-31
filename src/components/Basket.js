@@ -1,11 +1,40 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteItem, incrementQty, decrementQty } from "../actions/index";
+import _ from "lodash";
+import { HiOutlineMinusCircle, HiOutlinePlusCircle } from "react-icons/hi";
+
 function Basket(props) {
+  //calculate the total price of order
+  const getTotalPriceOfAll = () => {
+    //Finally found the right answers on stackoverflow :)
+    // create price array and qty array with _.map
+    const buy = props.buyThis;
+    const qty = _.map(buy, "quantity");
+    const price = _.map(buy, "price");
+
+    //multiply and sum those two arrays, total = price*qty+price*qty...
+    const totalPriceBooks = qty.reduce(function (r, a, i) {
+      let total = r + a * price[i];
+      return total;
+    }, 0);
+
+    const textForPrice =
+      totalPriceBooks > 0
+        ? "Total price of your order:"
+        : "Your basket is empty.";
+
+    const showPrice = totalPriceBooks > 0 ? totalPriceBooks : null;
+    return (
+      <div>
+        {textForPrice} {showPrice}
+      </div>
+    );
+  };
+
   const renderBooks = () => {
     return props.buyThis.map((item) => {
       const totalPrice = item.quantity * item.price;
-
       const decrementQty = () =>
         item.quantity < 2 ? null : () => props.decrementQty(item.id);
 
@@ -19,9 +48,11 @@ function Basket(props) {
           <div>{item.author}</div>
           <div>
             Quantity:
-            <button onClick={decrementQty()}>-</button>
+            <HiOutlineMinusCircle
+              onClick={decrementQty()}
+            ></HiOutlineMinusCircle>
             {item.quantity}
-            <button onClick={incrementQty()}>+</button>
+            <HiOutlinePlusCircle onClick={incrementQty()}></HiOutlinePlusCircle>
           </div>
           <div>Price: {item.price}</div>
           <div>Total: {totalPrice} EUR</div>
@@ -31,7 +62,12 @@ function Basket(props) {
     });
   };
 
-  return <div className="basket-container">{renderBooks()}</div>;
+  return (
+    <div className="basket-container">
+      {renderBooks()}
+      {getTotalPriceOfAll()}
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => {
