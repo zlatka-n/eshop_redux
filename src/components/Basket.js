@@ -19,10 +19,8 @@ function Basket(props) {
           <div>{item.author}</div>
           <div>
             Quantity:
-            {/* <button onClick={() => props.decrementQty(item.id)}>-</button> */}
             <button onClick={decrementQty()}>-</button>
             {item.quantity}
-            {/* <button onClick={() => props.incrementQty(item.id)}>+</button> */}
             <button onClick={incrementQty()}>+</button>
           </div>
           <div>Price: {item.price}</div>
