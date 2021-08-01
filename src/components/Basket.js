@@ -16,6 +16,9 @@ function Basket(props) {
     //multiply and sum those two arrays, total = price*qty+price*qty...
     const totalPriceBooks = qty.reduce(function (r, a, i) {
       let total = r + a * price[i];
+      total = parseFloat(total).toFixed(2);
+      total = parseFloat(total);
+      //console.log(typeof total);
       return total;
     }, 0);
 
@@ -34,7 +37,10 @@ function Basket(props) {
 
   const renderBooks = () => {
     return props.buyThis.map((item) => {
-      const totalPrice = item.quantity * item.price;
+      let totalPrice = item.quantity * item.price;
+      totalPrice = totalPrice.toFixed(2);
+      //console.log(typeof totalPrice);
+
       const decrementQty = () =>
         item.quantity < 2 ? null : () => props.decrementQty(item.id);
 
