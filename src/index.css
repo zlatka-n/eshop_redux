@@ -4,11 +4,11 @@
 }
 
 body {
-  font-family: verdana;
   min-height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
-.navBar-container {
+/* .navBar-container {
   display: flex;
   justify-content: flex-end;
   min-width: 800px;
@@ -25,13 +25,20 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.container-item {
-  float: right;
-  padding-left: 8px;
-  padding-right: 8px;
-}
 
 img {
   width: 200px;
   height: 275px;
 }
+
+.itemImg {
+  float: left;
+}
+
+#labelSelect {
+  margin-right: 10px;
+}
+
+.bookInTheCart {
+  margin-top: 20px;
+} */
