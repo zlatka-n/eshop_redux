@@ -1,0 +1,101 @@
+.basket-container {
+  margin-right: 20px;
+  margin-left: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.imgBasket {
+  width: 85px;
+  height: 147px;
+  margin-right: 20px;
+}
+
+.itemInfoBasket {
+  line-height: 27px;
+  display: inline-block;
+  border-bottom: 1px solid #e7e7e7;
+  width: 51%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.imgBasket {
+  float: left;
+  padding-bottom: 20px;
+}
+
+.deleteBasket,
+.totalPriceItem {
+  float: right;
+}
+
+.totalPriceItem,
+.orderValue,
+.totalSum {
+  display: flex;
+  align-items: center;
+}
+.summaryBasket {
+  display: inline-block;
+  width: 40%;
+  margin-left: 6%;
+}
+
+.itemTextBasket {
+  width: 100%;
+}
+
+.summaryTitle,
+.deliveryLine {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.orderValue,
+.deliveryFee,
+.totalSum {
+  float: right;
+}
+
+.totalSumLine {
+  margin-top: 20px;
+}
+
+.orderValueLine {
+  padding-top: 10px;
+}
+
+.eurIcon {
+  margin-right: 3px;
+}
+
+.qtySpan,
+.itemPriceBasket {
+  margin-left: 10px;
+}
+
+.orderValueDelivery {
+  line-height: 27px;
+}
+
+#titleBasket {
+  font-weight: bold;
+}
+
+/* ADJUST width for responsiveness */
+.emptyBasket {
+  display: block;
+  padding: 219px 0 219px;
+  width: 200%;
+  text-align: center;
+}
+#emptyBasketBtn {
+  width: 226px;
+  height: 45px;
+  background-color: #ee6423;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+}

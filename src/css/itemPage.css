@@ -1,0 +1,63 @@
+.containerItemPage {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.itemImg {
+  grid-column: 1/2;
+}
+
+.infoItemPage {
+  grid-column: 2/3;
+}
+
+.titleItemPage {
+  font-size: 24px;
+}
+
+.itemPrice,
+.itemBtn {
+  grid-column: 3/4;
+}
+
+.imgItemPage {
+  justify-self: center;
+  width: 251px;
+  height: 400px;
+}
+
+#authorItemPage {
+  margin-top: 10px;
+}
+
+.descriptionItemPage {
+  margin-top: 10px;
+  width: 90%;
+}
+
+.itemBtn {
+  width: 80%;
+  height: 45px;
+  background-color: #ee6423;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.priceItemPage {
+  color: #ee6423;
+  font-size: 30px;
+}
+
+#truckIcon,
+#dispatchIcon {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.dispatchInfo,
+.deliveryInfo,
+.itemBtn {
+  margin-top: 15px;
+}

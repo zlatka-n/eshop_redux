@@ -1,0 +1,36 @@
+header {
+  margin-bottom: 20px;
+}
+
+.navBar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  background-color: #00b5da;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.navBar-item {
+  display: flex;
+  color: white;
+  align-items: flex-center;
+}
+
+.navBar-item:hover {
+  color: white;
+}
+
+.icon {
+  font-size: 20px;
+  align-self: center;
+}
+
+#noItems {
+  margin-right: 10px;
+}
+
+#bookStore {
+  margin-left: 10px;
+}

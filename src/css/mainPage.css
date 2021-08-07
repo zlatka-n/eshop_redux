@@ -1,0 +1,61 @@
+.imgMainPage {
+  width: 200px;
+  height: 275px;
+}
+
+.addBtn {
+  background-color: #ee6423;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 15px;
+  height: 35px;
+}
+
+.addBtn:hover {
+  background-color: #ff6c25;
+}
+.link:hover {
+  text-decoration: none;
+}
+
+.item-info {
+  color: black;
+}
+
+.item-info:hover {
+  color: black;
+}
+
+.mainPage-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* column-gap: 10px; */
+  justify-items: center;
+  row-gap: 30px;
+}
+
+.item-info {
+  inline-size: 200px;
+  overflow-wrap: break-word;
+  text-decoration: none;
+}
+
+.itemTitle {
+  height: 45px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+.itemTitle:hover {
+  text-decoration: underline;
+}
+.itemAuthor {
+  padding-top: 5px;
+  color: #4d4d4d;
+}
+
+.itemPrice {
+  font-size: 17px;
+  color: red;
+}
