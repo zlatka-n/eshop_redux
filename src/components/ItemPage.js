@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { buyItem } from "../actions/index";
-
+import "../css/itemPage.css";
+import { FaTruck } from "react-icons/fa";
+import { GrCheckmark } from "react-icons/gr";
 function ItemPage(props) {
   //console.log(props);
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
 
   //using history object, programmatic navigation. if history's id equals store's id, right object key values will be rendered
   const historyId = Number(props.match.params.id);
@@ -21,23 +23,40 @@ function ItemPage(props) {
   // }, [quantity]);
 
   const handleSubmit = () => {
-    setQuantity(quantity + 1);
-    //console.log("handleSubmit");
-    //console.log(quantity);
-    props.buyItem(historyId, quantity);
+    // setQuantity(quantity + 1);
+    // props.buyItem(historyId, quantity);
+    props.buyItem(historyId);
   };
 
   const renderItemInfo = () => {
     return props.products.map((item) => {
       if (item.id === historyId) {
         return (
-          <div className="container-item" key={item.id}>
-            <img src={item.image} className="itemImg" alt="books' item"></img>
-            <div>
-              <div className="itemTitle">{item.title}</div>
-              <div className="itemAuthor">{item.author}</div>
-              <div className="itemPrice">Price: {item.price} EUR</div>
-              <button onClick={() => handleSubmit()}>Add to basket</button>
+          <div className="containerItemPage" key={item.id}>
+            <img
+              src={item.image}
+              className="imgItemPage"
+              alt="books' item"
+            ></img>
+            <div className="infoItemPage">
+              <div className="titleItemPage">{item.title}</div>
+              <div id="authorItemPage">{item.author}</div>
+              <div className="descriptionItemPage">{item.description}</div>
+            </div>
+
+            <div className="priceAndBtn">
+              <div className="priceItemPage">Price: {item.price} EUR</div>
+              <div className="deliveryInfo">
+                <FaTruck id="truckIcon"></FaTruck>Free delivery
+              </div>
+
+              <div className="dispatchInfo">
+                <GrCheckmark id="dispatchIcon"></GrCheckmark>Dispatched in two
+                business days
+              </div>
+              <button onClick={() => handleSubmit()} className="itemBtn">
+                Add to basket
+              </button>
             </div>
           </div>
         );

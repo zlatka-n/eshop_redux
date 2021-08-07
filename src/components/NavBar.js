@@ -4,6 +4,8 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { ImBooks } from "react-icons/im";
 import { connect } from "react-redux";
 import _ from "lodash";
+import navBar from "../css/navBar.css";
+
 function NavBar(props) {
   //fn showing number of items next to the basket icon
   const getNoItems = () => {
@@ -22,14 +24,17 @@ function NavBar(props) {
   return (
     <header>
       <div className="navBar-container">
-        <Link to="/" className="home">
-          <ImBooks></ImBooks>Book store
+        <Link to="/">
+          <div className="navBar-item">
+            <ImBooks className="icon"></ImBooks>
+            <span id="bookStore">Book store</span>
+          </div>
         </Link>
 
         <Link to="/basket">
-          <div>
-            {getNoItems()}
-            <FaShoppingBasket></FaShoppingBasket>
+          <div className="navBar-item">
+            <span id="noItems">{getNoItems()}</span>
+            <FaShoppingBasket className="icon"></FaShoppingBasket>
           </div>
         </Link>
       </div>
