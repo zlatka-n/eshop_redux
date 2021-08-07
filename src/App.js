@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import MainPage from "./components/MainPage";
 import ItemPage from "./components/ItemPage";
 import history from "./history";
+import DeliveryForm from "./components/DeliveryForm";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           </Route>
 
           <Route path="/item/:id" exact component={ItemPage} />
+          <Route path="/delivery" exact component={DeliveryForm} />
         </Switch>
       </Router>
     </div>
