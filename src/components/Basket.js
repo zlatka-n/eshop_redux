@@ -2,18 +2,23 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteItem, incrementQty, decrementQty } from "../actions/index";
 import _ from "lodash";
-import { HiOutlineMinusCircle, HiOutlinePlusCircle } from "react-icons/hi";
+import { TiDelete } from "react-icons/ti";
+import { BiEuro, BiPlus, BiMinus } from "react-icons/bi";
+import "../css/basket.css";
+import { useHistory } from "react-router-dom";
 
 function Basket(props) {
+  let history = useHistory();
   //calculate the total price of order
   const getTotalPriceOfAll = () => {
     //Finally found the right answers on stackoverflow :)
+
     // create price array and qty array with _.map
     const buy = props.buyThis;
     const qty = _.map(buy, "quantity");
     const price = _.map(buy, "price");
 
-    //multiply and sum those two arrays, total = price*qty+price*qty...
+    //multiply and sum those two arrays: total = price*qty+price*qty...
     const totalPriceBooks = qty.reduce(function (r, a, i) {
       let total = r + a * price[i];
       total = parseFloat(total).toFixed(2);
@@ -22,15 +27,67 @@ function Basket(props) {
       return total;
     }, 0);
 
+    //(not)showing price
     const textForPrice =
-      totalPriceBooks > 0
-        ? "Total price of your order:"
-        : "Your basket is empty.";
+      totalPriceBooks > 0 ? "TOTAL" : "Your basket is empty.";
+
+    const textForPriceClass =
+      totalPriceBooks > 0 ? "totalSumLine" : "emptyBasket";
+
+    //show button if basket is empty, navigate to homepage
+    const emptyBasketBtn = () => {
+      const goHome = () => {
+        return history.push("/");
+      };
+      if (totalPriceBooks < 1) {
+        return (
+          <button id="emptyBasketBtn" onClick={goHome}>
+            Continue shopping
+          </button>
+        );
+      }
+    };
 
     const showPrice = totalPriceBooks > 0 ? totalPriceBooks : null;
+    const showEUR =
+      totalPriceBooks > 0 ? <BiEuro className="eurIcon"></BiEuro> : null;
+
+    const summary = () => {
+      if (totalPriceBooks > 0) {
+        return (
+          <div>
+            <div className="summaryTitle">SUMMARY</div>
+            <span className="orderValueDelivery">
+              <div className="orderValueLine">
+                Order value
+                <div className="orderValue">
+                  <BiEuro className="eurIcon"></BiEuro>
+                  {totalPriceBooks}
+                </div>
+              </div>
+              <div className="deliveryLine">
+                Delivery <div className="deliveryFee">Free</div>
+              </div>
+            </span>
+          </div>
+        );
+      }
+      return;
+    };
+
     return (
       <div>
-        {textForPrice} {showPrice}
+        {/* <div className="textBasketItems">{textBasketItems}</div> */}
+        {summary()}
+        <div className={textForPriceClass}>
+          {textForPrice}
+          <div>{emptyBasketBtn()}</div>
+          <span className="totalSum">
+            {showEUR}
+            {showPrice}
+          </span>
+          {/* <button>buy sth</button> */}
+        </div>
       </div>
     );
   };
@@ -48,21 +105,39 @@ function Basket(props) {
         item.quantity > 19 ? null : () => props.incrementQty(item.id);
 
       return (
-        <div key={item.id}>
-          <img src={item.image} alt="book in the cart"></img>
-          <div>{item.title}</div>
-          <div>{item.author}</div>
-          <div>
-            Quantity:
-            <HiOutlineMinusCircle
-              onClick={decrementQty()}
-            ></HiOutlineMinusCircle>
-            {item.quantity}
-            <HiOutlinePlusCircle onClick={incrementQty()}></HiOutlinePlusCircle>
+        <div key={item.id} className="item-container">
+          <div className="itemInfoBasket">
+            <img
+              src={item.image}
+              className="imgBasket"
+              alt="book in the cart"
+            ></img>
+            <TiDelete
+              className="deleteBasket"
+              onClick={() => props.deleteItem(item.id)}
+            >
+              Delete
+            </TiDelete>
+            <div className="itemTextBasket">
+              <div id="titleBasket">{item.title}</div>
+              <div>{item.author}</div>
+              <div>
+                Quantity:
+                <span className="qtySpan">
+                  <BiMinus onClick={decrementQty()}></BiMinus>
+                  {item.quantity}
+                  <BiPlus onClick={incrementQty()}></BiPlus>
+                </span>
+              </div>
+              <div>
+                Price: <span className="itemPriceBasket">{item.price}</span>
+              </div>
+              <div className="totalPriceItem">
+                <BiEuro className="eurIcon"></BiEuro>
+                {totalPrice}
+              </div>
+            </div>
           </div>
-          <div>Price: {item.price}</div>
-          <div>Total: {totalPrice} EUR</div>
-          <button onClick={() => props.deleteItem(item.id)}>Delete</button>
         </div>
       );
     });
@@ -71,7 +146,7 @@ function Basket(props) {
   return (
     <div className="basket-container">
       {renderBooks()}
-      {getTotalPriceOfAll()}
+      <div className="summaryBasket">{getTotalPriceOfAll()}</div>
     </div>
   );
 }
