@@ -4,7 +4,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { ImBooks } from "react-icons/im";
 import { connect } from "react-redux";
 import _ from "lodash";
-import navBar from "../css/navBar.css";
+import "../css/navBar.css";
 
 function NavBar(props) {
   //fn showing number of items next to the basket icon

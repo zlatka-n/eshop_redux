@@ -41,8 +41,24 @@ function Basket(props) {
       };
       if (totalPriceBooks < 1) {
         return (
-          <button id="emptyBasketBtn" onClick={goHome}>
-            Continue shopping
+          <div>
+            <button id="emptyBasketBtn" onClick={goHome}>
+              Continue shopping
+            </button>
+          </div>
+        );
+      }
+    };
+
+    //show checkout btn
+    const checkoutBtn = () => {
+      const goToCheckOut = () => {
+        return history.push("/delivery");
+      };
+      if (totalPriceBooks > 0) {
+        return (
+          <button id="checkoutBtn" onClick={goToCheckOut}>
+            Proceed to checkout
           </button>
         );
       }
@@ -81,11 +97,12 @@ function Basket(props) {
         {summary()}
         <div className={textForPriceClass}>
           {textForPrice}
-          <div>{emptyBasketBtn()}</div>
+          {emptyBasketBtn()}
           <span className="totalSum">
             {showEUR}
             {showPrice}
           </span>
+          <div>{checkoutBtn()}</div>
           {/* <button>buy sth</button> */}
         </div>
       </div>
