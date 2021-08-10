@@ -9,6 +9,15 @@ export const buyItem = (id) => {
   };
 };
 
+export const getDeliveryInfo = (values) => {
+  return {
+    type: "DELIVERY_INFO",
+    payload: {
+      address: values,
+    },
+  };
+};
+
 export const deleteItem = (id) => {
   return {
     type: "DELETE_ITEM",
