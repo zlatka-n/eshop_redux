@@ -69,6 +69,7 @@ const initState = {
     },
   ],
   buy: [],
+  delivery: [],
 };
 
 export const toBuy = (state = initState, action) => {
@@ -114,6 +115,11 @@ export const toBuy = (state = initState, action) => {
             : item
         ),
       };
+    // case "DELIVERY_INFO":
+    //   return {
+    //     ...state,
+    //     delivery: { ...action.payload },
+    //   };
     default:
       return state;
   }
