@@ -8,37 +8,5 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* .navBar-container {
-  display: flex;
-  justify-content: flex-end;
-  min-width: 800px;
-  background-color: pink;
-  margin-bottom: 30px;
+@media {
 }
-
-.home {
-  margin-right: auto;
-  padding-left: 10px;
-}
-
-.mainPage-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-img {
-  width: 200px;
-  height: 275px;
-}
-
-.itemImg {
-  float: left;
-}
-
-#labelSelect {
-  margin-right: 10px;
-}
-
-.bookInTheCart {
-  margin-top: 20px;
-} */
