@@ -1,4 +1,4 @@
-.containerItemPage {
+/* .containerItemPage {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
@@ -11,17 +11,17 @@
   grid-column: 2/3;
 }
 
+.itemPrice,
+.itemBtn {
+  grid-column: 3/4;
+} */
+
 .titleItemPage {
   font-size: 24px;
 }
 
-.itemPrice,
-.itemBtn {
-  grid-column: 3/4;
-}
-
 .imgItemPage {
-  justify-self: center;
+  margin: 0 auto;
   width: 251px;
   height: 400px;
 }
@@ -60,4 +60,26 @@
 .deliveryInfo,
 .itemBtn {
   margin-top: 15px;
+}
+
+@media screen and (min-width: 320px) {
+  .containerItemPage {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .containerItemPage {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .infoItemPage {
+    grid-column: 2/3;
+  }
+
+  .itemPrice,
+  .itemBtn {
+    grid-column: 3/4;
+  }
 }

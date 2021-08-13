@@ -28,14 +28,6 @@
   color: black;
 }
 
-.mainPage-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* column-gap: 10px; */
-  justify-items: center;
-  row-gap: 30px;
-}
-
 .item-info {
   inline-size: 200px;
   overflow-wrap: break-word;
@@ -58,4 +50,23 @@
 .itemPrice {
   font-size: 17px;
   color: red;
+}
+
+/* smaller phones and most smaprtphones*/
+@media screen and (min-width: 320px) {
+  .mainPage-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 30px;
+  }
+}
+
+/* tablets' viewpoints and up*/
+@media screen and (min-width: 768px) {
+  .mainPage-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 30px;
+  }
 }
