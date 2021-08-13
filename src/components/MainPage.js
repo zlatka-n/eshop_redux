@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { buyItem } from "../actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "../css/mainPage.css";
+import ModalWindow from "../components/ModalWindow";
 
 function MainPage(props) {
+  const [showModal, setShowModal] = useState(false);
+
+  const hideModal = () => {
+    setShowModal(false);
+  };
+
   const renderList = () => {
     return props.products.map((el) => {
+      //show modal and update buy state
+      const onBuyClick = () => {
+        props.buyItem(el.id);
+        setShowModal(true);
+      };
       return (
         <div className="container-item" key={el.id}>
           <Link className="link" to={`/item/${el.id}`}>
@@ -17,7 +29,7 @@ function MainPage(props) {
               <div className="itemPrice">{el.price} EUR</div>
             </div>
           </Link>
-          <button className="addBtn" onClick={() => props.buyItem(el.id)}>
+          <button className="addBtn" onClick={onBuyClick}>
             Add to basket
           </button>
         </div>
@@ -25,7 +37,16 @@ function MainPage(props) {
     });
   };
 
-  return <div className="mainPage-container">{renderList()}</div>;
+  return (
+    <div className="mainPage-container">
+      {renderList()}
+      <div className="showModal">
+        {showModal === true ? (
+          <ModalWindow showModal={showModal} hideModal={hideModal} />
+        ) : null}
+      </div>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => {

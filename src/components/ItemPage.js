@@ -33,11 +33,13 @@ function ItemPage(props) {
       if (item.id === historyId) {
         return (
           <div className="containerItemPage" key={item.id}>
-            <img
-              src={item.image}
-              className="imgItemPage"
-              alt="books' item"
-            ></img>
+            <div className="imgItemPage">
+              <img
+                src={item.image}
+                // className="imgItemPage"
+                alt="books' item"
+              ></img>
+            </div>
             <div className="infoItemPage">
               <div className="titleItemPage">{item.title}</div>
               <div id="authorItemPage">{item.author}</div>
