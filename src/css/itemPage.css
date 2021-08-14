@@ -1,49 +1,31 @@
-/* .containerItemPage {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-}
-
-.itemImg {
-  grid-column: 1/2;
-}
-
-.infoItemPage {
-  grid-column: 2/3;
-}
-
-.itemPrice,
-.itemBtn {
-  grid-column: 3/4;
-} */
-
 .titleItemPage {
   font-size: 24px;
-  margin: 0 auto;
 }
 
-.imgItemPage {
+/* .imgItemPage {
   margin: 0 auto;
   width: 251px;
   height: 400px;
-}
+} */
 
 .authorItemPage {
-  margin-top: 10px;
-  /* margin: 0 auto; */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .descriptionItemPage {
   margin-top: 10px;
-  /* margin: 0 auto; */
-  /* width: 90%; */
+  font-size: 14px;
 }
 
-.priceAndBtn {
-  width: 100%;
+.deliveryInfo,
+.dispatchInfo {
+  font-size: 14px;
 }
 
 .itemBtn {
-  width: 90%;
+  width: 95%;
   height: 45px;
   background-color: #ee6423;
   color: white;
@@ -55,7 +37,7 @@
 
 .priceItemPage {
   color: #ee6423;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 #truckIcon,
@@ -64,48 +46,46 @@
   margin-right: 10px;
 }
 
-.dispatchInfo,
+/* .dispatchInfo,
 .deliveryInfo,
 .itemBtn {
   margin-top: 15px;
-}
+} */
 
 @media screen and (max-width: 768px) {
-  /* .containerItemPage {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  } */
-
   .infoItemPage {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
-  .descriptionItemPage {
+  .descriptionMobile {
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 20px 20px 20px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
   }
 
   .titleItemPage {
-    flex: 1;
-    order: 1;
+    /* flex: 1; */
+    /* order: 1; */
     font-size: 18px;
     font-weight: 1000;
+    text-align: center;
   }
 
   .authorItemPage {
     text-align: center;
-    margin-top: 0px;
     order: 2;
   }
 
   .imgItemPage {
-    order: 3;
+    order: 1;
     width: 200px;
     height: 300px;
+    margin-top: 10px;
+    margin: 0 auto;
   }
 
   img {
@@ -122,9 +102,14 @@
     flex-wrap: wrap;
   }
 
-  .priceItemPage,
   .deliveryInfo,
   .dispatchInfo {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .priceItemPage {
     width: 100%;
     text-align: center;
   }
@@ -133,7 +118,10 @@
     font-size: 25px;
   }
   .descriptionItemPage {
-    order: 4;
+    display: none;
+  }
+
+  .itemBtn {
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -141,21 +129,48 @@
 
 @media screen and (min-width: 768px) {
   .containerItemPage {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    /* justify-items: center; */
+    display: flex;
+    flex-direction: row;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    box-sizing: border-box;
   }
-  .imgItemPage {
-    float: left;
-    margin-right: 20px;
+  .descriptionMobile {
+    display: none;
   }
   .infoItemPage {
-    grid-column: 1/3;
-    margin-left: 10px;
+    display: flex;
+    width: 70%;
   }
 
-  .itemPrice,
+  .imgItemPage {
+    width: 260px;
+    height: 400px;
+  }
+  .priceAndBtn {
+    width: 30%;
+  }
+  img {
+    width: 260px;
+    height: 400px;
+  }
+
+  .authorTitleDescriptionBox {
+    /* width: 100%; */
+    /* margin-right: 5%; */
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow-wrap: break-word;
+  }
+
+  .dispatchInfo,
+  .deliveryInfo,
+  .itemBtn {
+    margin-top: 15px;
+  }
+  /* .itemPrice,
   .itemBtn {
     grid-column: 3/4;
-  }
+  } */
 }

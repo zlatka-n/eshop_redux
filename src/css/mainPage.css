@@ -1,8 +1,3 @@
-.imgMainPage {
-  width: 200px;
-  height: 275px;
-}
-
 .addBtn {
   background-color: #ee6423;
   color: white;
@@ -16,6 +11,7 @@
 .addBtn:hover {
   background-color: #ff6c25;
 }
+
 .link:hover {
   text-decoration: none;
 }
@@ -43,7 +39,7 @@
   text-decoration: underline;
 }
 .itemAuthor {
-  padding-top: 5px;
+  margin-top: 10px;
   color: #4d4d4d;
 }
 
@@ -52,21 +48,51 @@
   color: red;
 }
 
-/* smaller phones and most smaprtphones*/
-@media screen and (min-width: 320px) {
+/* smaller smaprtphones*/
+@media screen and (max-width: 480px) {
+  .mainPage-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .container-item {
+    width: 80%;
+  }
+  .imgMainPage {
+    width: 150px;
+    height: 225px;
+  }
+}
+
+/* smaprtphones*/
+@media screen and (max-width: 767px) {
   .mainPage-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     row-gap: 30px;
   }
+
+  .imgMainPage {
+    width: 150px;
+    height: 225px;
+  }
 }
 
-/* tablets' viewpoints and up*/
+/*smaller desktop viewpoints and up*/
 @media screen and (min-width: 768px) {
   .mainPage-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 30px;
+    justify-items: center;
+  }
+
+  .imgMainPage {
+    width: 200px;
+    height: 275px;
   }
 }
