@@ -13,9 +13,6 @@ function ModalWindow(props) {
 
     return (
       <React.Fragment>
-        {/* <span className="closeModalIcon">
-          <GrFormClose />
-        </span> */}
         <button className="modalBasketBtn" onClick={goToBasket}>
           Basket / Checkout
         </button>
@@ -29,7 +26,7 @@ function ModalWindow(props) {
   const closeModal = () => {
     return (
       <React.Fragment>
-        <GrFormClose onClick={props.hideModal} />
+        <GrFormClose onClick={props.hideModal} className="close" />
       </React.Fragment>
     );
   };
