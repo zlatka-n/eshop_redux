@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "../components/Modal";
 import { useHistory } from "react-router-dom";
 import { GrFormClose } from "react-icons/gr";

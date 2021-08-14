@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/order.css";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import ContinueShopping from "./ContinueShopping";
 
 function OrderCompleted() {
   return (
@@ -15,6 +16,7 @@ function OrderCompleted() {
         Thank your for your purchase. Your order will be dispatched within 2
         days.
       </div>
+      <ContinueShopping />
     </div>
   );
 }

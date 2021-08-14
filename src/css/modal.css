@@ -53,6 +53,7 @@
 
   .modal-content {
     width: 90%;
+    min-height: 200px;
     height: 16%;
   }
   .modalBtn-container {
@@ -80,7 +81,7 @@
 @media screen and (min-width: 768px) {
   .modal-content {
     width: 70%;
-    height: 25%;
+    height: 160px;
   }
 
   .modalBtn-container {

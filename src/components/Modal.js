@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../css/modal.css";
-import { GrFormClose } from "react-icons/gr";
-// import { Link } from "react-router-dom";
 
 const Modal = (props) => {
   return ReactDOM.createPortal(

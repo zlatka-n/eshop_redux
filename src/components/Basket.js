@@ -6,6 +6,7 @@ import { TiDelete } from "react-icons/ti";
 import { BiEuro, BiPlus, BiMinus } from "react-icons/bi";
 import "../css/basket.css";
 import { useHistory } from "react-router-dom";
+import ContinueShopping from "./ContinueShopping";
 
 function Basket(props) {
   let history = useHistory();
@@ -36,15 +37,16 @@ function Basket(props) {
 
     //show button if basket is empty, navigate to homepage
     const emptyBasketBtn = () => {
-      const goHome = () => {
-        return history.push("/");
-      };
+      // const goHome = () => {
+      //   return history.push("/");
+      // };
       if (totalPriceBooks < 1) {
         return (
           <div className="emptyBasketBtn-container">
-            <button id="emptyBasketBtn" onClick={goHome}>
+            {/* <button id="emptyBasketBtn" onClick={goHome}>
               Continue shopping
-            </button>
+            </button> */}
+            <ContinueShopping />
           </div>
         );
       }
