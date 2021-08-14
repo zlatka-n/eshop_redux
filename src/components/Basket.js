@@ -41,7 +41,7 @@ function Basket(props) {
       };
       if (totalPriceBooks < 1) {
         return (
-          <div>
+          <div className="emptyBasketBtn-container">
             <button id="emptyBasketBtn" onClick={goHome}>
               Continue shopping
             </button>
@@ -71,7 +71,7 @@ function Basket(props) {
     const summary = () => {
       if (totalPriceBooks > 0) {
         return (
-          <div>
+          <div className="summaryTable">
             <div className="summaryTitle">SUMMARY</div>
             <span className="orderValueDelivery">
               <div className="orderValueLine">
@@ -96,8 +96,8 @@ function Basket(props) {
         {/* <div className="textBasketItems">{textBasketItems}</div> */}
         {summary()}
         <div className={textForPriceClass}>
-          {textForPrice}
-          {emptyBasketBtn()}
+          <span>{textForPrice}</span>
+          <span>{emptyBasketBtn()}</span>
           <span className="totalSum">
             {showEUR}
             {showPrice}
@@ -162,7 +162,7 @@ function Basket(props) {
 
   return (
     <div className="basket-container">
-      {renderBooks()}
+      <div>{renderBooks()}</div>
       <div className="summaryBasket">{getTotalPriceOfAll()}</div>
     </div>
   );
