@@ -6,6 +6,7 @@ import { TiDelete } from "react-icons/ti";
 import { BiEuro, BiPlus, BiMinus } from "react-icons/bi";
 import "../css/basket.css";
 import { useHistory } from "react-router-dom";
+import ContinueShopping from "./ContinueShopping";
 
 function Basket(props) {
   let history = useHistory();
