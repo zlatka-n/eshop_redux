@@ -3,14 +3,17 @@
   margin-left: 20px; */
   box-sizing: border-box;
   width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
   font-size: 14px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .imgBasket {
   width: 85px;
   height: 147px;
   margin-right: 20px;
 }
+
 /*splitting into two halves: books on left, summary on the right*/
 .item-container {
   width: 100%;
@@ -91,14 +94,6 @@
 }
 
 /* ADJUST width for responsiveness */
-.emptyBasket {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 219px 0 219px;
-  width: 280%;
-  /* text-align: center; */
-}
 
 #emptyBasketBtn {
   width: 226px;
@@ -108,7 +103,6 @@
   border: none;
   border-radius: 5px;
   font-size: 15px;
-  margin-top: 20px;
 }
 
 #checkoutBtn {
@@ -124,8 +118,68 @@
 
 /* make button's height bigger for phones*/
 
-@media screen and (max-width: 485px) {
-  #checkoutBtn {
+@media screen and (max-width: 767px) {
+  /* #checkoutBtn {
     height: 50px;
+  } */
+
+  .item-container {
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+  }
+
+  .itemInfoBasket {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 27px;
+    display: block;
+    border-bottom: 1px solid #e7e7e7;
+    /* width: 62.5%; */
+    /* float: left; */
+    margin-bottom: 20px;
+  }
+
+  .summaryBasket {
+    font-size: 12px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #checkoutBtn {
+    margin-bottom: 20px;
+  }
+
+  /*EMPTY BASKET*/
+  .emptyBasket {
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  #emptyBasketBtn {
+    width: 226px;
+    height: 40px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .emptyBasket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-width: 280%;
+    margin-top: 20px;
+  }
+
+  #emptyBasketBtn {
+    margin-top: 10px;
   }
 }

@@ -59,7 +59,7 @@ const initState = {
     },
     {
       id: 6,
-      title: "The Death and Life of Great American Cities",
+      title: "The Death",
       author: "Jane Jacobs",
       price: 15.22,
       quantity: 1,

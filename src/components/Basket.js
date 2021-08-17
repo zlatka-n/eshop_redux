@@ -41,11 +41,11 @@ function Basket(props) {
       };
       if (totalPriceBooks < 1) {
         return (
-          <div className="emptyBasketBtn-container">
+          <React.Fragment>
             <button id="emptyBasketBtn" onClick={goHome}>
               Continue shopping
             </button>
-          </div>
+          </React.Fragment>
         );
       }
     };
@@ -96,7 +96,7 @@ function Basket(props) {
         {/* <div className="textBasketItems">{textBasketItems}</div> */}
         {summary()}
         <div className={textForPriceClass}>
-          <span>{textForPrice}</span>
+          {textForPrice}
           <span>{emptyBasketBtn()}</span>
           <span className="totalSum">
             {showEUR}

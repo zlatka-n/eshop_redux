@@ -1,3 +1,8 @@
+.mainPage-container {
+  width: 90%;
+  /* margin-left: 5%;
+  margin-right: 5%; */
+}
 .addBtn {
   background-color: #ee6423;
   color: white;
@@ -49,50 +54,280 @@
 }
 
 /* smaller smaprtphones*/
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 0px) and (max-width: 479px) {
   .mainPage-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    row-gap: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    font-size: 14px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    row-gap: 20px;
+    padding-bottom: 20px;
   }
+
   .container-item {
+    /* margin-top: auto; */
+    width: 40%;
+    /* padding: 5px 5px 5px 5px; */
+  }
+
+  .imgMainPage {
+    width: 100%;
+    height: 180px;
+  }
+
+  .addBtn {
+    width: 100%;
+  }
+}
+
+/*smartphones*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .mainPage-container {
+    font-size: 14px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    row-gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .container-item {
+    margin-top: auto;
+    width: 40%;
+    padding: 5px 5px 5px 5px;
+  }
+
+  .imgMainPage {
+    width: 100%;
+    height: 280px;
+  }
+
+  .addBtn {
+    width: 100%;
+  }
+}
+
+/*tablets, laptops*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .mainPage-container {
+    /* height: 100vh; */
+    width: 86%;
+    display: flex;
+    margin-left: 7%;
+    margin-right: 7%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .container-item {
+    height: 40%;
+    width: 33%;
+  }
+
+  .imgMainPage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 178px;
+    width: auto;
+    height: 267px;
+  }
+
+  .addBtn {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-info {
+    margin-right: 15%;
+    margin-left: 15%;
+  }
+}
+
+/*tablets*/
+@media screen and (min-width: 1025px) and (max-width: 1450px) {
+  .mainPage-container {
+    /* height: 100vh; */
+    width: 86%;
+    display: flex;
+    margin-left: 7%;
+    margin-right: 7%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .container-item {
+    height: 40%;
+    width: 33%;
+  }
+
+  .imgMainPage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 190px;
+    height: 267px;
+  }
+
+  .addBtn {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-info {
+    margin-right: 25%;
+    margin-left: 25%;
+  }
+}
+
+/*laptops, 20 palcu, muj monitor*/
+@media screen and (min-width: 1451px) and (max-width: 2559px) {
+  .mainPage-container {
+    /* height: 100vh; */
+    width: 86%;
+    display: flex;
+    margin-left: 7%;
+    margin-right: 7%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .container-item {
+    height: 40%;
+    width: 33%;
+  }
+
+  .imgMainPage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 190px;
+    height: 267px;
+  }
+
+  .addBtn {
+    width: 190px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-info {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .itemTitle,
+  .itemAuthor,
+  .itemPrice {
+    width: 60%;
+    display: block;
+    padding-left: 5px;
+  }
+}
+
+/*24 palcu*/
+@media screen and (min-width: 2560px) and (max-width: 3839px) {
+  .mainPage-container {
+    /* height: 100vh; */
     width: 80%;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+    margin-bottom: 20px;
   }
+
+  .container-item {
+    height: 40%;
+    width: 33%;
+  }
+
   .imgMainPage {
-    width: 150px;
-    height: 225px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 553px;
+  }
+
+  .addBtn {
+    min-width: 500px;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-info {
+    width: 100%;
+  }
+
+  .itemTitle,
+  .itemAuthor,
+  .itemPrice {
+    width: 60%;
+    display: block;
+    padding-left: 13%;
   }
 }
 
-/* smaprtphones*/
-@media screen and (max-width: 767px) {
+/*28 palcu a vic*/
+@media screen and (min-width: 3840px) {
   .mainPage-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    /* height: 100vh; */
+    width: 80%;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-wrap: wrap;
+    justify-content: space-between;
     row-gap: 30px;
   }
 
-  .imgMainPage {
-    width: 150px;
-    height: 225px;
-  }
-}
-
-/*smaller desktop viewpoints and up*/
-@media screen and (min-width: 768px) {
-  .mainPage-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 30px;
-    justify-items: center;
+  .container-item {
+    height: 40%;
+    width: 33%;
   }
 
   .imgMainPage {
-    width: 200px;
-    height: 275px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 829px;
+  }
+
+  .addBtn {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-info {
+    margin-right: 20%;
+    margin-left: 20%;
   }
 }

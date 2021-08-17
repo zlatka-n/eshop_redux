@@ -2,12 +2,6 @@
   font-size: 24px;
 }
 
-/* .imgItemPage {
-  margin: 0 auto;
-  width: 251px;
-  height: 400px;
-} */
-
 .authorItemPage {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -46,13 +40,7 @@
   margin-right: 10px;
 }
 
-/* .dispatchInfo,
-.deliveryInfo,
-.itemBtn {
-  margin-top: 15px;
-} */
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .infoItemPage {
     display: flex;
     flex-direction: column;
@@ -68,8 +56,6 @@
   }
 
   .titleItemPage {
-    /* flex: 1; */
-    /* order: 1; */
     font-size: 18px;
     font-weight: 1000;
     text-align: center;
@@ -127,7 +113,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1025px) and (max-width: 2559px) {
   .containerItemPage {
     display: flex;
     flex-direction: row;
@@ -145,20 +131,14 @@
   }
 
   .imgItemPage {
-    width: 260px;
-    height: 400px;
+    min-width: 260px;
+    min-height: 400px;
   }
   .priceAndBtn {
     width: 30%;
   }
-  img {
-    width: 260px;
-    height: 400px;
-  }
 
   .authorTitleDescriptionBox {
-    /* width: 100%; */
-    /* margin-right: 5%; */
     margin-left: 5%;
     margin-right: 5%;
     overflow-wrap: break-word;
@@ -169,8 +149,56 @@
   .itemBtn {
     margin-top: 15px;
   }
-  /* .itemPrice,
+}
+
+@media screen and (min-width: 2560px) {
+  .containerItemPage {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 2.5%;
+    box-sizing: border-box;
+  }
+  .descriptionMobile {
+    display: none;
+  }
+  .infoItemPage {
+    display: flex;
+    width: 50%;
+  }
+
+  .imgItemPage {
+    width: 50%;
+  }
+
+  img {
+    min-width: 500px;
+    width: auto;
+    min-height: 600px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .priceAndBtn {
+    width: 30%;
+  }
+
+  .authorTitleDescriptionBox {
+    width: 50%;
+    margin-right: 5%;
+    overflow-wrap: break-word;
+  }
+
+  .dispatchInfo,
+  .deliveryInfo,
   .itemBtn {
-    grid-column: 3/4;
-  } */
+    margin-top: 15px;
+  }
+
+  .itemBtn {
+    height: 70px;
+  }
 }
