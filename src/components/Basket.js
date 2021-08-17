@@ -7,6 +7,7 @@ import { BiEuro, BiPlus, BiMinus } from "react-icons/bi";
 import "../css/basket.css";
 import { useHistory } from "react-router-dom";
 import ContinueShopping from "./ContinueShopping";
+import { getTotalPrice } from "../reusableFn/getTotalPrice";
 
 function Basket(props) {
   let history = useHistory();
@@ -19,14 +20,18 @@ function Basket(props) {
     const qty = _.map(buy, "quantity");
     const price = _.map(buy, "price");
 
+    //reusable fn, calculate the sum of all books: total = price*qty+price*qty...
+    const totalPriceBooks = getTotalPrice(qty, price);
+    // console.log("totalPriceBooks " + totalPriceBooks);
+
     //multiply and sum those two arrays: total = price*qty+price*qty...
-    const totalPriceBooks = qty.reduce(function (r, a, i) {
-      let total = r + a * price[i];
-      total = parseFloat(total).toFixed(2);
-      total = parseFloat(total);
-      //console.log(typeof total);
-      return total;
-    }, 0);
+    // const totalPriceBooks = qty.reduce(function (r, a, i) {
+    //   let total = r + a * price[i];
+    //   total = parseFloat(total).toFixed(2);
+    //   total = parseFloat(total);
+    //   // console.log(total);
+    //   return total;
+    // }, 0);
 
     //(not)showing price
     const textForPrice =
@@ -37,15 +42,16 @@ function Basket(props) {
 
     //show button if basket is empty, navigate to homepage
     const emptyBasketBtn = () => {
-      const goHome = () => {
-        return history.push("/");
-      };
+      // const goHome = () => {
+      //   return history.push("/");
+      // };
       if (totalPriceBooks < 1) {
         return (
           <React.Fragment>
-            <button id="emptyBasketBtn" onClick={goHome}>
+            {/* <button id="emptyBasketBtn" onClick={goHome}>
               Continue shopping
-            </button>
+            </button> */}
+            <ContinueShopping />
           </React.Fragment>
         );
       }

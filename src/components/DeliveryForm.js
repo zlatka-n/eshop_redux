@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import "../css/deliveryForm.css";
 import { BiEuro } from "react-icons/bi";
 import _ from "lodash";
+import { getTotalPrice } from "../reusableFn/getTotalPrice";
 
 const validate = (values) => {
   const errors = {};
@@ -86,13 +87,15 @@ let DeliveryForm = (props) => {
     const price = _.map(buy, "price");
 
     //multiply and sum those two arrays: total = price*qty+price*qty...
-    const totalPriceBooks = qty.reduce(function (r, a, i) {
-      let total = r + a * price[i];
-      total = parseFloat(total).toFixed(2);
-      total = parseFloat(total);
-      // console.log(total);
-      return total;
-    }, 0);
+    // const totalPriceBooks = qty.reduce(function (r, a, i) {
+    //   let total = r + a * price[i];
+    //   total = parseFloat(total).toFixed(2);
+    //   total = parseFloat(total);
+    //   // console.log(total);
+    //   return total;
+    // }, 0);
+
+    const totalPriceBooks = getTotalPrice(qty, price);
 
     return (
       <React.Fragment>
