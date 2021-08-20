@@ -1,0 +1,42 @@
+.footer-container {
+  position: relative;
+  width: 100%;
+  background-color: #6273d9;
+  font-size: 14px;
+  color: white;
+  line-height: 27px;
+  margin-top: 40px;
+  /* min-height: auto;*/
+
+  /* position: absolute;
+  bottom: 0; */
+
+  /* position: sticky; */
+}
+
+.footer {
+  display: flex;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.contact {
+  padding-left: 20px;
+}
+.links {
+  padding-left: 20px;
+}
+
+.linkToAbout {
+  color: white;
+}
+.title-footer {
+  border-bottom: 1px solid white;
+}
+
+@media screen and (min-height: 980px) {
+  .footer-container {
+    position: absolute;
+    bottom: 0;
+  }
+}
