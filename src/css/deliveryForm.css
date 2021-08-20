@@ -1,0 +1,128 @@
+.deliveryContainer {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: block;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/*splitting into two halves: delivery and summary*/
+.formBox {
+  float: left;
+  width: 60%;
+}
+
+/*Order summary: book title, qty, price, total price, free delivery*/
+.deliveryContainer {
+  line-height: 27px;
+}
+.deliverySummary {
+  width: 40%;
+  float: right;
+}
+/**/
+
+.delivery-address-title {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.summary-checkout-title {
+  padding-bottom: 10px;
+}
+.itemDelivery-container {
+  border-bottom: 1px solid #e7e7e7;
+  line-height: 30px;
+}
+
+.totalPriceDelivery {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+/* .total-delivery {
+  display: flex;
+  align-items: center;
+} */
+
+#freeWord {
+  float: right;
+}
+
+#totalPriceBooks-delivery {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+/*FORM*/
+input {
+  width: 90%;
+  /* margin-bottom: 20px; */
+}
+
+.error-form {
+  color: red;
+  display: flex;
+  align-items: flex-end;
+}
+
+.continue-btn {
+  width: 70px;
+  height: 45px;
+  background-color: #82d943;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.continue-btn:hover {
+  background-color: #8abf3b;
+}
+
+/*up to ipad*/
+@media screen and (max-width: 761px) {
+  .deliveryContainer {
+    width: 90%;
+    overflow-x: hidden;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formBox {
+    order: 2;
+    width: 100%;
+  }
+
+  .deliverySummary {
+    order: 1;
+    width: 90%;
+  }
+
+  .summary-checkout-title,
+  .delivery-address-title {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .continue-btn {
+    width: 70px;
+    height: 40px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 762px) {
+  .deliveryContainer {
+    height: 80vh;
+  }
+}
