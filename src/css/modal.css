@@ -14,7 +14,7 @@
 }
 
 .modalBasketBtn {
-  background-color: #ee6423;
+  background-color: #80b4bf;
   color: white;
   border: none;
   border-radius: 5px;
@@ -23,12 +23,16 @@
 }
 
 .modalContinueBtn {
-  background-color: #ee6423;
+  background-color: #82d943;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 15px;
   height: 35px;
+}
+
+.modalContinueBtn:hover {
+  background-color: #8abf3b;
 }
 
 .modalTitle {

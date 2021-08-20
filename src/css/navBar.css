@@ -1,20 +1,22 @@
 header {
-  margin-bottom: 20px;
-  width: 100%;
+  /* margin-bottom: 20px; */
+  box-sizing: border-box;
 }
 
 .navBar-container {
-  /* width: 100%; */
   display: flex;
+  height: 50px;
+  box-sizing: border-box;
   justify-content: space-between;
-  padding: 10px;
   width: 100%;
-  background-color: #00b5da;
+  background-color: #6273d9;
   font-size: 15px;
-  margin-bottom: 10px;
+  overflow: hidden;
+  padding-top: 15px;
 }
 
 .navBar-item {
+  /* padding-top: 10%; */
   display: flex;
   color: white;
   align-items: flex-center;
@@ -24,9 +26,19 @@ header {
   color: white;
 }
 
-.icon {
+.icon,
+.iconBooks {
   font-size: 20px;
   align-self: center;
+}
+
+.icon {
+  margin-right: 20px;
+  /* padding-top: 10%; */
+}
+
+.iconBooks {
+  margin-left: 20px;
 }
 
 #noItems {
@@ -35,4 +47,42 @@ header {
 
 #bookStore {
   margin-left: 10px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 479px) {
+  .navBar-container {
+    margin-bottom: 20px;
+  }
+
+  .icon {
+    margin-right: 10px;
+  }
+
+  .iconBooks {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .navBar-container {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1450px) {
+  .navBar-container {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1451px) and (max-width: 2559px) {
+  .navBar-container {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .navBar-container {
+    margin-bottom: 60px;
+  }
 }

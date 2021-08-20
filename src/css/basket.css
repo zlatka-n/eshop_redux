@@ -32,6 +32,9 @@
   display: inline-block;
   width: 32.5%;
   margin-left: 5%;
+
+  /*UTERY: TOHLE JE NOVE, POZOR: nastaveno kvuli footeru*/
+  height: 80vh;
 }
 /**/
 
@@ -98,22 +101,30 @@
 #emptyBasketBtn {
   width: 226px;
   height: 45px;
-  background-color: #ee6423;
+  background-color: #82d943;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 15px;
 }
 
+#emptyBasketBtn:hover {
+  background-color: #8abf3b;
+}
+
 #checkoutBtn {
   width: 100%;
   margin-top: 20px;
-  background-color: #ee6423;
+  background-color: #82d943;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 15px;
   height: 40px;
+}
+
+#checkoutBtn:hover {
+  background-color: #8abf3b;
 }
 
 /* make button's height bigger for phones*/

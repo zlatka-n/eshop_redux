@@ -21,7 +21,7 @@
 .itemBtn {
   width: 95%;
   height: 45px;
-  background-color: #ee6423;
+  background-color: #82d943;
   color: white;
   border: none;
   border-radius: 5px;
@@ -29,6 +29,9 @@
   margin: 0 auto;
 }
 
+.itemBtn {
+  background-color: #8abf3b;
+}
 .priceItemPage {
   color: #ee6423;
   font-size: 24px;
@@ -115,6 +118,7 @@
 
 @media screen and (min-width: 1025px) and (max-width: 2559px) {
   .containerItemPage {
+    height: 80vh;
     display: flex;
     flex-direction: row;
     margin-right: 5%;
@@ -171,23 +175,27 @@
 
   .imgItemPage {
     width: 50%;
+    min-width: 550px;
   }
 
-  img {
-    min-width: 500px;
-    width: auto;
+  /* .imgMainPage {
+    min-width: 400px;
     min-height: 600px;
-    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
+
+  /* img {
+    min-width: 80%;
+    min-height: 60%;
+  } */
   .priceAndBtn {
     width: 30%;
   }
 
   .authorTitleDescriptionBox {
-    width: 50%;
+    width: 70%;
     margin-right: 5%;
     overflow-wrap: break-word;
   }

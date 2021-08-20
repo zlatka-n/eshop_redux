@@ -1,10 +1,12 @@
+/*color palette: #6273D9 #5483BF #80B4BF #82D943 #8ABF3B*/
 .mainPage-container {
   width: 90%;
+  font-size: 14px;
   /* margin-left: 5%;
   margin-right: 5%; */
 }
 .addBtn {
-  background-color: #ee6423;
+  background-color: #82d943;
   color: white;
   border: none;
   border-radius: 5px;
@@ -14,7 +16,7 @@
 }
 
 .addBtn:hover {
-  background-color: #ff6c25;
+  background-color: #8abf3b;
 }
 
 .link:hover {
@@ -30,7 +32,8 @@
 }
 
 .item-info {
-  inline-size: 200px;
+  min-inline-size: 100px;
+  max-inline-size: 200px;
   overflow-wrap: break-word;
   text-decoration: none;
 }
@@ -53,7 +56,7 @@
   color: red;
 }
 
-/* smaller smaprtphones*/
+/* smaller smartphones*/
 @media screen and (min-width: 0px) and (max-width: 479px) {
   .mainPage-container {
     font-size: 14px;
@@ -130,7 +133,7 @@
   }
 
   .container-item {
-    height: 40%;
+    /* height: 40%; */
     width: 33%;
   }
 
@@ -171,7 +174,7 @@
   }
 
   .container-item {
-    height: 40%;
+    /* height: 40%; */
     width: 33%;
   }
 
@@ -211,7 +214,7 @@
   }
 
   .container-item {
-    height: 40%;
+    /* height: 40%; */
     width: 33%;
   }
 
@@ -234,6 +237,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-inline-size: 204px;
   }
 
   .itemTitle,
@@ -260,7 +264,7 @@
   }
 
   .container-item {
-    height: 40%;
+    /* height: 40%; */
     width: 33%;
   }
 
@@ -287,16 +291,19 @@
   .itemTitle,
   .itemAuthor,
   .itemPrice {
+    min-width: 500px;
     width: 60%;
     display: block;
-    padding-left: 13%;
+    /* padding-left: 13%; */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /*28 palcu a vic*/
 @media screen and (min-width: 3840px) {
   .mainPage-container {
-    /* height: 100vh; */
+    height: 90vh;
     width: 80%;
     display: flex;
     margin-left: 10%;
@@ -307,7 +314,6 @@
   }
 
   .container-item {
-    height: 40%;
     width: 33%;
   }
 
@@ -316,7 +322,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-    height: 829px;
+    height: 650px;
   }
 
   .addBtn {

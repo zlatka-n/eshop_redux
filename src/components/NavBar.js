@@ -26,7 +26,7 @@ function NavBar(props) {
       <div className="navBar-container">
         <Link to="/">
           <div className="navBar-item">
-            <ImBooks className="icon"></ImBooks>
+            <ImBooks className="iconBooks"></ImBooks>
             <span id="bookStore">Book store</span>
           </div>
         </Link>

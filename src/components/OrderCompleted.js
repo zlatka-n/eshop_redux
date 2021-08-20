@@ -2,6 +2,7 @@ import React from "react";
 import "../css/order.css";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import ContinueShopping from "./ContinueShopping";
+import "../css/orderConfirmed.css";
 
 function OrderCompleted() {
   return (

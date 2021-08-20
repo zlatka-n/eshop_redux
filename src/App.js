@@ -7,6 +7,8 @@ import ItemPage from "./components/ItemPage";
 import history from "./history";
 import DeliveryForm from "./components/DeliveryForm";
 import OrderCompleted from "./components/OrderCompleted";
+import Footer from "./components/Footer";
+import AboutUs from "./components/AboutUs";
 function App() {
   return (
     <div className="App">
@@ -23,8 +25,10 @@ function App() {
 
           <Route path="/item/:id" exact component={ItemPage} />
           <Route path="/delivery" exact component={DeliveryForm} />
+          <Route path="/about" exact component={AboutUs} />
           <OrderCompleted />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import ModalWindow from "../components/ModalWindow";
 import { connect } from "react-redux";
 import { buyItem } from "../actions/index";
 import "../css/itemPage.css";
@@ -9,7 +10,11 @@ function ItemPage(props) {
 
   //using history object, programmatic navigation. if history's id equals store's id, right object key values will be rendered
   const historyId = Number(props.match.params.id);
+  const [showModal, setShowModal] = useState(false);
 
+  const hideModal = () => {
+    setShowModal(false);
+  };
   // useEffect(() => {
   //   const values = Object.values(props.itemsToSell);
   //   values.map((book) => {
@@ -25,6 +30,7 @@ function ItemPage(props) {
     // setQuantity(quantity + 1);
     // props.buyItem(historyId, quantity);
     props.buyItem(historyId);
+    setShowModal(true);
   };
 
   //render book page that user clicked on
@@ -35,13 +41,17 @@ function ItemPage(props) {
           <div className="containerItemPage" key={item.id}>
             <div className="infoItemPage">
               <div className="imgItemPage">
-                <img src={item.image} alt="books' item"></img>
+                <img
+                  className="imgItemPage"
+                  src={item.image}
+                  alt="books' item"
+                ></img>
               </div>
-              <span className="authorTitleDescriptionBox">
+              <div className="authorTitleDescriptionBox">
                 <div className="titleItemPage">{item.title}</div>
                 <div className="authorItemPage">{item.author}</div>
                 <div className="descriptionItemPage">{item.description}</div>
-              </span>
+              </div>
             </div>
             {/* show this div description for mobile size and hide "descriptionItemPage", specific order: title,
             author, img, description */}
@@ -67,7 +77,16 @@ function ItemPage(props) {
     });
   };
 
-  return <div className="itemContainer">{renderItemInfo()}</div>;
+  return (
+    <div className="itemContainer">
+      {renderItemInfo()}
+      <div className="showModal">
+        {showModal === true ? (
+          <ModalWindow showModal={showModal} hideModal={hideModal} />
+        ) : null}
+      </div>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => {
