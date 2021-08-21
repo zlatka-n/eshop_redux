@@ -2,8 +2,6 @@
 .mainPage-container {
   width: 90%;
   font-size: 14px;
-  /* margin-left: 5%;
-  margin-right: 5%; */
 }
 .addBtn {
   background-color: #82d943;
@@ -73,9 +71,8 @@
   }
 
   .container-item {
-    /* margin-top: auto; */
     width: 40%;
-    /* padding: 5px 5px 5px 5px; */
+    margin-bottom: 10px;
   }
 
   .imgMainPage {
@@ -85,6 +82,7 @@
 
   .addBtn {
     width: 100%;
+    /* margin-bottom: 10px; */
   }
 }
 
@@ -121,7 +119,6 @@
 /*tablets, laptops*/
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .mainPage-container {
-    /* height: 100vh; */
     width: 86%;
     display: flex;
     margin-left: 7%;
@@ -162,7 +159,6 @@
 /*tablets*/
 @media screen and (min-width: 1025px) and (max-width: 1450px) {
   .mainPage-container {
-    /* height: 100vh; */
     width: 86%;
     display: flex;
     margin-left: 7%;
@@ -202,7 +198,6 @@
 /*laptops, 20 palcu, muj monitor*/
 @media screen and (min-width: 1451px) and (max-width: 2559px) {
   .mainPage-container {
-    /* height: 100vh; */
     width: 86%;
     display: flex;
     margin-left: 7%;
@@ -294,7 +289,6 @@
     min-width: 500px;
     width: 60%;
     display: block;
-    /* padding-left: 13%; */
     margin-left: auto;
     margin-right: auto;
   }
