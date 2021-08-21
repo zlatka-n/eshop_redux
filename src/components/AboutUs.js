@@ -20,8 +20,13 @@ function AboutUs() {
           screen sizes.
         </p>
         <p>
+          The inspiration for this website layout came from&nbsp;
+          <a href="https://www.bookdepository.com/">Book Depository</a> and{" "}
+          <a href="https://www.cosstores.com/en_eur/index.html">COS</a>.
+        </p>
+        <p>
           Below I include my tech stack that I used and also my github account.
-          Don't hesitate to contact me either by phone +420735204082 or email
+          Don't hesitate to contact me either by phone +420 735 204 082 or email
           zlatka094@seznam.cz. Once again thank you for visiting my page.
         </p>
         Greetings, <br></br>Zlatka
