@@ -28,7 +28,7 @@ function AboutUs() {
       </div>
       <br></br>
       <div>
-        <h4>Used techstack</h4>
+        <h4>Used tech stack</h4>
         <ul>
           <li>React</li>
           <li>Redux</li>
