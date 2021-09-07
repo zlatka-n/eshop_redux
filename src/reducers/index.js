@@ -16,9 +16,3 @@ export const rootReducer = (state, action) => {
   }
   return appReducer(state, action);
 };
-
-// export default combineReducers({
-//   getBook: toBuy,
-//   showItems: availableItems,
-//   form: formReducer,
-// });
