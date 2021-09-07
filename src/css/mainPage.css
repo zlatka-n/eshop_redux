@@ -145,7 +145,8 @@
     margin-left: auto;
     margin-right: auto;
     min-width: 178px;
-    width: auto;
+    width: 80%;
+    /* width: auto; */
     height: 267px;
   }
 
@@ -176,7 +177,6 @@
   }
 
   .container-item {
-    /* height: 40%; */
     width: 33%;
   }
 
@@ -184,8 +184,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 190px;
-    height: 267px;
+    width: 50%;
+    max-width: 190px;
+    height: 230px;
   }
 
   .addBtn {
@@ -253,7 +254,6 @@
 /*24 palcu*/
 @media screen and (min-width: 2560px) and (max-width: 3839px) {
   .mainPage-container {
-    /* height: 100vh; */
     width: 80%;
     display: flex;
     margin-left: 10%;
@@ -265,7 +265,6 @@
   }
 
   .container-item {
-    /* height: 40%; */
     width: 33%;
   }
 
