@@ -10,12 +10,20 @@ function AboutUs() {
         <p>
           thank you for visiting my bookstore page. I created this website with
           the intention to primarily improve my React and Redux skills. It took
-          me about four weeks to finish this bookstore, and I can't say how much
-          I learned from this project (and how happy I am happy having finished
-          it). Firstly, I pushed myself to use effectively Stackoverflow, think
-          more about nested data structures and finally learn more of css. The
-          latest was my most procrastinated front-end thing to learn in depth.
-          So pardon me, if this website is not perfectly responsive, but I truly
+          me about four weeks to finish this bookstore - it's been the most
+          extensive project I've made so far. <br />
+          <div className="learnt">
+            I learnt several things doing this project:
+            <ul>
+              <li>I started being better at using Stackoverflow</li>
+              <li>I learned more about nested data structures </li>
+              <li>
+                I learned more about responsive design (css was my
+                procrastination)
+              </li>
+            </ul>
+          </div>{" "}
+          Pardon me, if this website is not perfectly responsive, but I truly
           tried to make it responsive for smarpthones, tablets and various
           screen sizes.
         </p>

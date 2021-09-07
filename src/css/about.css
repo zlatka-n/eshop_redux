@@ -1,5 +1,4 @@
 .about-container {
-  /* height: 80vh; */
   margin-right: 5%;
   margin-left: 5%;
 }
@@ -7,8 +6,17 @@
 li {
   margin-left: 30px;
 }
-@media screen and (min-width: 1025px) {
+
+.learnt {
+  padding-top: 10px;
+  /* padding-bottom: 10px; */
+}
+
+.learnt > ul {
+  margin-top: 10px;
+}
+/* @media screen and (min-width: 1025px) {
   .about-container {
     height: 80vh;
   }
-}
+} */
