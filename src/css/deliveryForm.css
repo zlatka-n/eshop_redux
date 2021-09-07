@@ -123,6 +123,6 @@ input {
 
 @media screen and (min-width: 762px) {
   .deliveryContainer {
-    height: 80vh;
+    height: 100vh;
   }
 }
