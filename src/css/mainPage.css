@@ -205,10 +205,10 @@
 /*laptops, 20 palcu, muj monitor*/
 @media screen and (min-width: 1451px) and (max-width: 2559px) {
   .mainPage-container {
-    width: 86%;
+    width: 80%;
     display: flex;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-left: 10%;
+    margin-right: 10%;
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 30px;
@@ -218,37 +218,45 @@
   .container-item {
     /* height: 40%; */
     width: 33%;
+    display: flex;
+    flex-direction: column;
   }
 
   .imgMainPage {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 190px;
-    height: 267px;
+    min-width: 190px;
+    width: 60%;
+    /* min-height: 200px; */
+    max-height: 300px;
   }
 
   .addBtn {
-    width: 190px;
+    min-width: 190px;
+    width: 60%;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 
   .item-info {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-inline-size: 204px;
+    /* display: block; */
+    /* width: 100%; */
+    /* margin-right: auto;
+    max-inline-size: 204px; */
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
   }
 
-  .itemTitle,
+  /* .itemTitle,
   .itemAuthor,
   .itemPrice {
-    width: 60%;
+    width: 100%;
     display: block;
     padding-left: 5px;
-  }
+  } */
 }
 
 /*24 palcu*/
@@ -285,10 +293,13 @@
   }
 
   .item-info {
-    width: 100%;
+    /* width: 100%; */
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
   }
 
-  .itemTitle,
+  /* .itemTitle,
   .itemAuthor,
   .itemPrice {
     min-width: 500px;
@@ -296,7 +307,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
 }
 
 /*28 palcu a vic*/

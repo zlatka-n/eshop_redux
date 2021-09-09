@@ -6,12 +6,6 @@
   color: white;
   line-height: 27px;
   margin-top: 40px;
-  /* min-height: auto;*/
-
-  /* position: absolute;
-  bottom: 0; */
-
-  /* position: sticky; */
 }
 
 .footer {
@@ -34,9 +28,9 @@
   border-bottom: 1px solid white;
 }
 
-@media screen and (min-height: 980px) {
+/* @media screen and (min-height: 1360px) {
   .footer-container {
     position: absolute;
     bottom: 0;
   }
-}
+} */
