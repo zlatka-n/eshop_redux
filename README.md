@@ -9,7 +9,7 @@ I created a book store ecommerce with Redux, as I needed to train my brain to un
 - Basket - user sees all added books, their price, increasing or decreasing quantity or removing book is possible
 - Checkout - user submits delivery information
 
-You can view it here https://eshop-redux-2e2219dim-zlatka-n.vercel.app/basket.
+You can view it here https://eshop-redux-2e2219dim-zlatka-n.vercel.app/.
 
 ## Tech stack (libraries) used:
 
