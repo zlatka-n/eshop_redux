@@ -107,11 +107,6 @@
     padding: 5px 5px 5px 5px;
   }
 
-  /* .imgMainPage {
-    width: 100%;
-    height: 280px;
-  } */
-
   .imgMainPage {
     width: 100%;
     height: 280px;
@@ -170,6 +165,7 @@
     display: flex;
     margin-left: 7%;
     margin-right: 7%;
+
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 30px;
@@ -202,8 +198,8 @@
   }
 }
 
-/*laptops, 20 palcu, muj monitor*/
-@media screen and (min-width: 1451px) and (max-width: 2559px) {
+/*laptops, 20 palcu*/
+@media screen and (min-width: 1451px) and (max-width: 1900px) {
   .mainPage-container {
     width: 70%;
     display: flex;
@@ -211,12 +207,12 @@
     margin-right: 15%;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 30px;
+    row-gap: 20px;
     margin-bottom: 20px;
+    /* height: 100vh; */
   }
 
   .container-item {
-    /* height: 40%; */
     width: 33%;
     display: flex;
     flex-direction: column;
@@ -228,7 +224,6 @@
     margin-right: auto;
     min-width: 190px;
     width: 60%;
-    /* min-height: 200px; */
     max-height: 300px;
   }
 
@@ -241,22 +236,50 @@
   }
 
   .item-info {
-    /* display: block; */
-    /* width: 100%; */
-    /* margin-right: auto;
-    max-inline-size: 204px; */
     width: 60%;
     margin-right: 20%;
     margin-left: 20%;
   }
+}
 
-  /* .itemTitle,
-  .itemAuthor,
-  .itemPrice {
-    width: 100%;
+/* muj monitor*/
+@media screen and (min-width: 1900px) and (max-width: 2559px) {
+  .mainPage-container {
+    width: 70%;
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 90vh;
+  }
+
+  .container-item {
+    width: 33%;
+  }
+
+  .imgMainPage {
     display: block;
-    padding-left: 5px;
-  } */
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 190px;
+    width: 60%;
+    max-height: 300px;
+  }
+
+  .addBtn {
+    min-width: 190px;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .item-info {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
 }
 
 /*24 palcu*/
@@ -269,7 +292,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 30px;
-    margin-bottom: 20px;
   }
 
   .container-item {
@@ -298,16 +320,6 @@
     margin-right: 20%;
     margin-left: 20%;
   }
-
-  /* .itemTitle,
-  .itemAuthor,
-  .itemPrice {
-    min-width: 500px;
-    width: 60%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  } */
 }
 
 /*28 palcu a vic*/
