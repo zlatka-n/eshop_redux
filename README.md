@@ -1,6 +1,6 @@
 # Redux Eshop
 
-I created a book store ecommerce with Redux, as I needed to train my brain to understand Redux more eloquently.
+I created an ecommerce book store with React and Redux.
 
 ## The website could be separated into these parts:
 
