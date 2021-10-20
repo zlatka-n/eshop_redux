@@ -15,16 +15,6 @@ function ItemPage(props) {
   const hideModal = () => {
     setShowModal(false);
   };
-  // useEffect(() => {
-  //   const values = Object.values(props.itemsToSell);
-  //   values.map((book) => {
-  //     //console.log("render");
-  //     const bookQuant = book.map((item) => {
-  //       return setQuantity(item.quantity + 1);
-  //     });
-  //     return bookQuant;
-  //   });
-  // }, [quantity]);
 
   const handleSubmit = () => {
     // setQuantity(quantity + 1);

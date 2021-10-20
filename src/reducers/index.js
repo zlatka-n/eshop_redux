@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
 import { toBuy } from "./addItemReducer";
-// import { availableItems } from "./availableItems";
 import { reducer as formReducer } from "redux-form";
 
 const appReducer = combineReducers({
   getBook: toBuy,
-  // showItems: availableItems,
   form: formReducer,
 });
 

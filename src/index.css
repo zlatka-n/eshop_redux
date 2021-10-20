@@ -8,8 +8,7 @@ body,
 .App {
   height: 100vh;
 }
-/* body,
-#root, */
+
 .App {
   /* height: 100vh; */
   min-width: 320px;

@@ -24,15 +24,6 @@ function Basket(props) {
     const totalPriceBooks = getTotalPrice(qty, price);
     // console.log("totalPriceBooks " + totalPriceBooks);
 
-    //multiply and sum those two arrays: total = price*qty+price*qty...
-    // const totalPriceBooks = qty.reduce(function (r, a, i) {
-    //   let total = r + a * price[i];
-    //   total = parseFloat(total).toFixed(2);
-    //   total = parseFloat(total);
-    //   // console.log(total);
-    //   return total;
-    // }, 0);
-
     //(not)showing price
     const textForPrice =
       totalPriceBooks > 0 ? "TOTAL" : "Your basket is empty.";
@@ -42,15 +33,9 @@ function Basket(props) {
 
     //show button if basket is empty, navigate to homepage
     const emptyBasketBtn = () => {
-      // const goHome = () => {
-      //   return history.push("/");
-      // };
       if (totalPriceBooks < 1) {
         return (
           <React.Fragment>
-            {/* <button id="emptyBasketBtn" onClick={goHome}>
-              Continue shopping
-            </button> */}
             <ContinueShopping />
           </React.Fragment>
         );
@@ -100,7 +85,6 @@ function Basket(props) {
 
     return (
       <div>
-        {/* <div className="textBasketItems">{textBasketItems}</div> */}
         {summary()}
         <div className={textForPriceClass}>
           {textForPrice}
