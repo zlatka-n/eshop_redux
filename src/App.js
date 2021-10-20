@@ -7,7 +7,7 @@ import ItemPage from "./components/ItemPage";
 import history from "./history";
 import DeliveryForm from "./components/DeliveryForm";
 import OrderCompleted from "./components/OrderCompleted";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs";
 function App() {
   return (

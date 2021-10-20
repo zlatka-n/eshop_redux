@@ -6,11 +6,10 @@
 html,
 body,
 .App {
-  height: 100vh;
+  height: 100%;
 }
 
 .App {
-  /* height: 100vh; */
   min-width: 320px;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
