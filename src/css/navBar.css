@@ -82,13 +82,13 @@ header {
 @media screen and (min-width: 1900px) {
   .navBar-container {
     height: 70px;
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 70px;
   }
 
   .icon,
   .iconBooks {
-    font-size: 25px;
+    font-size: 23px;
     align-self: center;
   }
 
