@@ -167,13 +167,13 @@
     margin-right: 7%;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 30px;
+    /* row-gap: 30px; */
     margin-bottom: 20px;
   }
 
   .container-item {
     width: 33%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .imgMainPage {
