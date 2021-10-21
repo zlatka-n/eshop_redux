@@ -9,7 +9,7 @@ I created an ecommerce book store with React and Redux.
 - Basket - user sees all added books, their price, increasing or decreasing quantity or removing book is possible
 - Checkout - user submits delivery information
 
-You can view it here https://eshop-redux-o0j2i15xt-zlatka-n.vercel.app/.
+You can view it here https://eshop-redux-zlatka-n.vercel.app/.
 
 ## Tech stack (libraries) used:
 
