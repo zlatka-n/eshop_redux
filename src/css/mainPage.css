@@ -165,7 +165,6 @@
     display: flex;
     margin-left: 7%;
     margin-right: 7%;
-
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 30px;
@@ -174,7 +173,7 @@
 
   .container-item {
     width: 33%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .imgMainPage {
