@@ -1,9 +1,8 @@
 import React from 'react'
 import {createContext, useContext} from 'react';
 import {initState} from "./initState";
+
 const BuyContext = React.createContext();
-
-
 
 //////TODO: actions/////
 function buyReducer(state = initState, action) {

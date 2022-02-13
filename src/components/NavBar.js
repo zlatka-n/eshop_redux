@@ -1,4 +1,5 @@
 import React from "react";
+import { useBuyContext } from "../context/BuyProvider"
 import { Link } from "react-router-dom";
 import { FaShoppingBasket } from "react-icons/fa";
 import { ImBooks } from "react-icons/im";
@@ -7,10 +8,17 @@ import _ from "lodash";
 import "../css/navBar.css";
 
 function NavBar(props) {
+  const context = useBuyContext();
+  const { state } = context;
+
   //fn showing number of items next to the basket icon
   const getNoItems = () => {
-    const mapCart = props.cart;
+    // const mapCart = props.cart;
+    // const showNoItems = _.map(mapCart, "quantity");
+
+    const mapCart = state.buy;
     const showNoItems = _.map(mapCart, "quantity");
+    console.log(state.buy); 
 
     //sum of all items
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
