@@ -18,7 +18,6 @@ function NavBar(props) {
 
     const mapCart = state.buy;
     const showNoItems = _.map(mapCart, "quantity");
-    console.log(state.buy); 
 
     //sum of all items
     const reducer = (accumulator, currentValue) => accumulator + currentValue;

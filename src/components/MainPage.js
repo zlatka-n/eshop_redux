@@ -4,9 +4,12 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "../css/mainPage.css";
 import ModalWindow from "../components/ModalWindow";
-
+import { useBuyContext } from "../context/BuyProvider";
 function MainPage(props) {
   const [showModal, setShowModal] = useState(false);
+
+  const context = useBuyContext();
+  const { dispatch, state } = context;
 
   const hideModal = () => {
     setShowModal(false);
@@ -16,7 +19,7 @@ function MainPage(props) {
     return props.products.map((el) => {
       //show modal and update buy state
       const onBuyClick = () => {
-        props.buyItem(el.id);
+        dispatch({type: 'buyItem', payload: el.id})
         setShowModal(true);
       };
       return (
