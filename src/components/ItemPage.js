@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ModalWindow from "../components/ModalWindow";
+import {BuyProvider}  from "../context/BuyProvider"
+import {useBuyContext}  from "../context/BuyProvider"
+
 import { connect } from "react-redux";
 import { buyItem } from "../actions/index";
+// import {BuyContext} from "../context/buyConsumer.js";
 import "../css/itemPage.css";
 import { FaTruck } from "react-icons/fa";
 import { GrCheckmark } from "react-icons/gr";
+
 function ItemPage(props) {
-  //console.log(props);
+
+  const value = useBuyContext();
+  const {dispatch} = value;
 
   //using history object, programmatic navigation. if history's id equals store's id, right object key values will be rendered
   const historyId = Number(props.match.params.id);
@@ -17,15 +24,16 @@ function ItemPage(props) {
   };
 
   const handleSubmit = () => {
-    // setQuantity(quantity + 1);
-    // props.buyItem(historyId, quantity);
-    props.buyItem(historyId);
+    
+    // props.buyItem(historyId);
+    dispatch({type: 'buyItem', payload: historyId});
     setShowModal(true);
   };
 
   //render book page that user clicked on
   const renderItemInfo = () => {
-    return props.products.map((item) => {
+    return (
+      props.products.map((item) => {
       if (item.id === historyId) {
         return (
           <div className="containerItemPage" key={item.id}>
@@ -64,12 +72,14 @@ function ItemPage(props) {
         );
       }
       return null;
-    });
+    })
+    )
   };
 
   return (
     <div className="itemContainer">
       {renderItemInfo()}
+      {/* <h2>{value}</h2> */}
       <div className="showModal">
         {showModal === true ? (
           <ModalWindow showModal={showModal} hideModal={hideModal} />

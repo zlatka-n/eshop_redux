@@ -1,5 +1,6 @@
 import "./index.css";
 import { Router, Route, Switch } from "react-router-dom";
+import {BuyProvider}  from "./context/BuyProvider"
 import Basket from "./components/Basket";
 import NavBar from "./components/NavBar";
 import MainPage from "./components/MainPage";
@@ -12,6 +13,7 @@ import AboutUs from "./components/AboutUs";
 function App() {
   return (
     <div className="App">
+    <BuyProvider>
       <Router history={history}>
         <NavBar />
 
@@ -30,6 +32,7 @@ function App() {
         </Switch>
         {/* <Footer /> */}
       </Router>
+      </BuyProvider>
     </div>
   );
 }
