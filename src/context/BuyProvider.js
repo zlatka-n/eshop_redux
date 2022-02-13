@@ -27,6 +27,29 @@ function buyReducer(state = initState, action) {
             [...state.buy, { ...book }],
       };
     }
+    case "deleteItem":
+      return {
+        ...state,
+        buy: state.buy.filter((item) => item.id !== action.payload),
+      };
+    case "incrementQty":
+      return {
+        ...state,
+        buy: state.buy.map((item) =>
+          item.id === action.payload
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        ),
+      };
+    case "decrementQty":
+      return {
+        ...state,
+        buy: state.buy.map((item) =>
+          item.id === action.payload
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        ),
+      };
     default:{
       throw new Error('Unhaldled action type: ${action.type}');
     }

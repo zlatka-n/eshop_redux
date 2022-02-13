@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import {useBuyContext} from "../context/BuyProvider";
 import { deleteItem, incrementQty, decrementQty } from "../actions/index";
 import _ from "lodash";
 import { TiDelete } from "react-icons/ti";
@@ -11,18 +12,21 @@ import { getTotalPrice } from "../reusableFn/getTotalPrice";
 
 function Basket(props) {
   let history = useHistory();
+
+  const context = useBuyContext();
+  const {state, dispatch} = context;
   //calculate the total price of order
   const getTotalPriceOfAll = () => {
     //Finally found the right answers on stackoverflow :)
 
     // create price array and qty array with _.map
-    const buy = props.buyThis;
+    console.log(state);
+    const buy = state.buy;
     const qty = _.map(buy, "quantity");
     const price = _.map(buy, "price");
 
     //reusable fn, calculate the sum of all books: total = price*qty+price*qty...
     const totalPriceBooks = getTotalPrice(qty, price);
-    // console.log("totalPriceBooks " + totalPriceBooks);
 
     //(not)showing price
     const textForPrice =
@@ -101,16 +105,22 @@ function Basket(props) {
   };
 
   const renderBooks = () => {
-    return props.buyThis.map((item) => {
+    return state.buy.map((item) => {
       let totalPrice = item.quantity * item.price;
       totalPrice = totalPrice.toFixed(2);
       //console.log(typeof totalPrice);
 
+      // const decrementQty = () =>
+      //   item.quantity < 2 ? null : () => props.decrementQty(item.id);
+
+      // const incrementQty = () =>
+      //   item.quantity > 19 ? null : () => props.incrementQty(item.id);
+
       const decrementQty = () =>
-        item.quantity < 2 ? null : () => props.decrementQty(item.id);
+        item.quantity < 2 ? null : () => dispatch({type: 'decrementQty', payload: item.id})
 
       const incrementQty = () =>
-        item.quantity > 19 ? null : () => props.incrementQty(item.id);
+        item.quantity > 19 ? null : () => dispatch({type: 'incrementQty', payload: item.id});
 
       return (
         <div key={item.id} className="item-container">
@@ -122,7 +132,7 @@ function Basket(props) {
             ></img>
             <TiDelete
               className="deleteBasket"
-              onClick={() => props.deleteItem(item.id)}
+              onClick={() => dispatch({type: 'deleteItem', payload: item.id})}
             >
               Delete
             </TiDelete>
