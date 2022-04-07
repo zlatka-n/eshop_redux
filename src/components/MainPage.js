@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { buyItem } from "../actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -11,6 +11,27 @@ function MainPage(props) {
   const context = useBuyContext();
   const { dispatch, state } = context;
 
+  /*COUNTDOWN TIMER, FROM 10 MINS DOWN*/
+  const timeInMins = 2;
+  let [time, setTime] = useState(timeInMins * 60);
+  let [minutes, setMinutes] = useState(timeInMins);
+  let [seconds, setSeconds] = useState(0);
+
+  const countdown = () => {
+    setMinutes(Math.floor(time / 60));
+    setSeconds(time % 60);
+    if (time > 0) setTime(time--);
+  };
+
+  useEffect(() => {
+    setInterval(countdown, 1000);
+    return () => {
+      clearInterval(countdown);
+    };
+  }, []);
+
+  let getSeconds = seconds > 9 ? seconds : `0${seconds}`;
+
   const hideModal = () => {
     setShowModal(false);
   };
@@ -19,7 +40,7 @@ function MainPage(props) {
     return props.products.map((el) => {
       //show modal and update buy state
       const onBuyClick = () => {
-        dispatch({type: 'buyItem', payload: el.id})
+        dispatch({ type: "buyItem", payload: el.id });
         setShowModal(true);
       };
       return (
@@ -39,9 +60,12 @@ function MainPage(props) {
       );
     });
   };
-
+  // let getSeconds = seconds > 9 ? seconds : `0${seconds}`;
   return (
     <div className="mainPage-container">
+      <div>
+        countdown: {minutes} : {getSeconds}
+      </div>
       {renderList()}
       <div className="showModal">
         {showModal === true ? (
